@@ -1,3 +1,4 @@
+
 ###########
 # Windows #
 ###########
@@ -81,7 +82,7 @@ super + shift + s
     spotify
 # Emacs
 super + e
-    emacs
+    emacsclient -c -n -a='' 
 # Run command
 super + space
     dmenu_run -p  "Run"
