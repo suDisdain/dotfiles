@@ -1,0 +1,39 @@
+#! /bin/sh
+wal -R
+# Autostart
+feh --bg-fill --randomize ~/Pictures/Wallpapers/Sand.jpg &
+$HOME/.config/polybar/launch &
+xsetroot -cursor_name left_ptr &
+fcitx &
+xautolock -time 10 -corners ---- -locker slock &
+
+bspc config focus_follows_pointer true
+
+# Workspace
+bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+
+
+# source the colors.
+. "${HOME}/.cache/wal/colors.sh"
+
+# Set the border colors.
+bspc config normal_border_color "$color1"
+bspc config active_border_color "$color1"
+bspc config focused_border_color "$color1"
+
+# Border
+bspc config border_width 5
+
+# Gap
+bspc config window_gap   12
+
+# Monocule
+bspc config borderless_monocle true
+bspc config gapless_monocle    true
+bspc config single_monocle     true
+
+# Float
+bspc rule -a Lxappearance         state=floating
+bspc rule -a mpv                  state=floating
+bspc rule -a Surf                 state=tiled
+bspc rule -a Zathura              state=tiled
