@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Output locations. Unactivated progs should go to /dev/null.
+shell_shortcuts="${XDG_CONFIG_HOME:-$HOME/.config}/shortcutrc"
+
+# Remove, prepare files
+printf "# vim: filetype=sh\\nalias " > "$shell_shortcuts"
+
+# Format the `files` file in the correct syntax and sent it to both configs.
+sed "s/\s*#.*$//;/^\s*$/d"  "${XDG_CONFIG_HOME:-$HOME/.config}/files" | tee >(awk '{print $1"=\"$EDITOR "$2"\" \\"}' >> "$shell_shortcuts")
