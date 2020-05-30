@@ -2,6 +2,6 @@ bf	${XDG_CONFIG_HOME:-$HOME/.config}/files
 bd	${XDG_CONFIG_HOME:-$HOME/.config}/directories
 cfa	${XDG_CONFIG_HOME:-$HOME/.config}/.aliases
 cfz	$ZDOTDIR/.zshrc
-cfx	${XDG_CONFIG_HOME:-$HOME/.config}/Xresources
-cfk	${XDG_CONFIG_HOME:-$HOME/.config}/sxhkd/sxhkdrc
+cfx	${XDG_CONFIG_HOME:-$HOME/.config}/.Xresources
+csx	${XDG_CONFIG_HOME:-$HOME/.config}/sxhkd/sxhkdrc
 cbs	${XDG_CONFIG_HOME:-$HOME/.config}/bspwm/bspwmrc

@@ -30,7 +30,7 @@ values."
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
+   '(python
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -46,6 +46,11 @@ values."
      markdown
      org
      colors
+     latex
+     (latex :variables
+            latex-build-command "LaTeX"
+            latex-enable-folding t
+     )
      (c-c++ :variables c-c++-default-mode-for-headers 'c++-mode) 
      (c-c++ :variables c-c++-backend 'lsp-ccls)
      ;; (shell :variables
@@ -65,6 +70,7 @@ values."
      lsp-ui
      company-lsp
      ccls
+     adaptive-wrap
     )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -143,7 +149,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
+   dotspacemacs-default-font '("Iosevka"
                                :size 13
                                :weight normal
                                :width normal
@@ -322,7 +328,10 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (require 'ccls)
   (setq lsp-prefer-flymake nil)
+  (setq TeX-view-program-selection '((output-pdf "Zathura")))
   (add-hook  'prog-mode-hook 'lsp)
+  (add-hook 'doc-view-mode-hook 'auto-revert-mode)
+  (setq TeX-engine 'xetex)
   (add-hook 'c++-mode-hook 'lsp)
   )
 
