@@ -90,7 +90,7 @@ super + space
     dmenu_run -p  "Run"
 # Terminal
 super + Return
-	st
+	alacritty
 # Web browser
 super + w
     firefox
