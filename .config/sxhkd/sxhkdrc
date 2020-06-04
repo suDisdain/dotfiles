@@ -123,4 +123,8 @@ super + BackSpace
     slock
 # Discord
 super + d
-    discord-canary
+  discord-canary 
+# Reload Configs
+super + shift + r
+    bash ~/.config/bspwm/bspwmrc && \
+    killall -SIGUSR1 sxhkd

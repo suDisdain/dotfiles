@@ -57,6 +57,7 @@ setopt autocd
 source $HOME/.config/zinit/bin/zinit.zsh
 [[ -s /etc/profile.d/autojump.sh ]] && . /etc/profile.d/autojump.sh
 source $HOME/.config/.aliases
+cat .cache/wal/sequences
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shortcutrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shortcutrc"
 # User configuration
 # Lines configured by zsh-newuser-install
