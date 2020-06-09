@@ -123,7 +123,7 @@ super + BackSpace
     slock
 # Discord
 super + d
-  discord-canary 
+  discord
 # Reload Configs
 super + shift + r
     bash ~/.config/bspwm/bspwmrc && \
