@@ -4,54 +4,54 @@
 ###########
 
 # Close or kill window
-super + shift + {_,ctrl + }q
-	bspc node -{c,k}
+#super + shift + {_,ctrl + }q
+#	bspc node -{c,k}
 # Focus or swap window in the current workspace
-super + {_,shift + }{h,j,k,l}
-	bspc node -{f,s} {west,south,north,east}
+#super + {_,shift + }{h,j,k,l}
+#	bspc node -{f,s} {west,south,north,east}
 # Focus the given workspace or move window to that workspace
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f, node -d} '^{1-9,10}'
+#super + {_,shift + }{1-9,0}
+	#bspc {desktop -f, node -d} '^{1-9,10}'
 # Focus the next/previous window
-super + {_,shift +} Tab
-	bspc node -f {next,prev}.local
+#super + {_,shift +} Tab
+	#bspc node -f {next,prev}.local
 # Focus the last workspace
-super + {_,shift + }grave
-	bspc desktop -f last	
+#super + {_,shift + }grave
+	#bspc desktop -f last	
 
-
-#############
-# Preselect #
-#############
-
-# Preselect the direction
-super + p ; {h,j,k,l}
-	bspc node -p {west,south,north,east}
-# Cancel the preselection for the focused desktop
-super + p ; c
-	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 ##############
-# Properties #
+## Preselect #
 ##############
+#
+## Preselect the direction
+#super + p ; {h,j,k,l}
+#	bspc node -p {west,south,north,east}
+## Cancel the preselection for the focused desktop
+#super + p ; c
+#	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-# Toggle floating state
-super + f
-    if [ -z "$(bspc query -N -n focused.floating)" ]; then \                    
-        bspc node focused -t floating; \                                        
-    else \                                                                      
-        bspc node focused -t tiled; \                                           
-    fi
-# Toggle sticky flag
-super + s
-	bspc node -g sticky
-# Toggle monocle layout
-super + m
-    bspc desktop -l next
-
-# Rotate Window
-super + y
-    bspc node @parent -R 90     
+###############
+## Properties #
+###############
+#
+## Toggle floating state
+#super + f
+#    if [ -z "$(bspc query -N -n focused.floating)" ]; then \                    
+#        bspc node focused -t floating; \                                        
+#    else \                                                                      
+#        bspc node focused -t tiled; \                                           
+#    fi
+## Toggle sticky flag
+#super + s
+#	bspc node -g sticky
+## Toggle monocle layout
+#super + m
+#    bspc desktop -l next
+#
+## Rotate Window
+#super + y
+#    bspc node @parent -R 90     
 ##############
 # Media keys #
 ##############
@@ -85,9 +85,6 @@ super + shift + s
 # Emacs
 super + e
     emacsclient -c -n -a='' 
-# Run command
-super + space
-    dmenu_run -p  "Run"
 # Terminal
 super + Return
 	alacritty
@@ -97,24 +94,6 @@ super + w
 # Steam
 super + a
     steam-native
-# Bookmarks
-super + b
-    dmenu-bookmarks
-# Virtual machine manager
-super + {_,shift + }v
-    {dmenu-vbox,virtualbox}
-# Translator
-super + {_,shift + }t
-    dmenu-trans {en:vi,_}
-# Calculator
-super + c
-    dmenu-calc
-# Network menu
-super + n
-    dmenu-wifi
-# Key bindings list
-super + slash
-    dmenu-help
 # Power menu
 super + Escape
     dmenu-power
@@ -124,7 +103,6 @@ super + BackSpace
 # Discord
 super + d
   discord
-# Reload Configs
+# Reload sxhkd
 super + shift + r
-    bash ~/.config/bspwm/bspwmrc && \
     killall -SIGUSR1 sxhkd
