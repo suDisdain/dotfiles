@@ -11,6 +11,10 @@ alias fgrep='fgrep --color=auto'
 # emacs
 alias emc='emacsclient -c -n -a='' '
 
+# auto-swallow
+alias zathura='devour zathura'
+alias mpv='devour mpv'
+alias emacs='devour emacs'
 
 # interactive
 alias cp='cp -i'
